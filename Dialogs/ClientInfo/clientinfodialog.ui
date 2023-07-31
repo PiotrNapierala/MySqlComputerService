@@ -411,7 +411,7 @@ color: white;
            </font>
           </property>
           <property name="text">
-           <string>System data</string>
+           <string>System data:</string>
           </property>
          </widget>
         </item>
@@ -604,7 +604,7 @@ color: white;
            </font>
           </property>
           <property name="text">
-           <string>GDPR</string>
+           <string>GDPR:</string>
           </property>
          </widget>
         </item>
