@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FirstRunDialog</class>
+ <widget class="QDialog" name="FirstRunDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>280</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>280</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>First run</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources.qrc">
+    <normaloff>:/PNG/IMG/settings.png</normaloff>:/PNG/IMG/settings.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color: #000000;
+}
+
+QWidget{
+background-color: #000000;
+}
+
+QGroupBox{
+background-color: #212121;
+border: none;
+padding: 4px;
+border-radius: 6px;
+color: white;
+}
+
+QPushButton{
+background-color: #303030;
+border: 2px solid gray;
+border-radius: 4px;
+color: white;
+}
+QPushButton:hover{
+border-color: white;
+}
+
+QLineEdit{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}
+QLineEdit:focus{
+border-color: white;
+}
+
+QTextEdit{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}
+QTextEdit:focus{
+border-color: white;
+}
+
+QLabel{
+color: white;
+background: transparent;
+}
+
+QListWidget{
+background: transparent;
+border: 1px solid gray;
+border-radius: 6px;
+padding: 6px;
+}
+QListWidget::item{
+background-color: rgba(255,255,255,50);
+border: none;
+color: white;
+border-radius: 6px;
+padding: 6px;
+margin-top: 6px;
+}
+QListWidget::item:hover{
+background-color: rgba(255,255,255,100);
+}
+
+QCheckBox{
+background: transparent;
+color: white;
+}
+QCheckBox::indicator{
+width:24px;
+height: 24px;
+border: 1px solid gray;
+border-radius: 4px;
+}
+QCheckBox::indicator:hecked{
+image: url(:/PNG/IMG/done.png);
+}
+QCheckBox::indicator:unchecked{
+image: none;
+}
+
+QTabWidget::pane{
+background: transparent;
+border: none;
+padding: 4px;
+border-radius: 6px;
+}
+QTabBar::tab{
+background-color: #303030;
+border: 2px solid gray;
+border-radius: 4px;
+color: white;
+padding-left: 6px;
+padding-right: 6px;
+padding-top: 3px;
+padding-bottom: 3px;
+margin-left: 2px;
+}
+QTabBar::tab:hover{
+border-color: white;
+}
+QTabBar::tab:selected{
+border-color: white;
+}
+
+QScrollBar:vertical {        
+border: none;
+width:14px;
+background-color: #212121;
+margin: 0px 0px 0px 0px;
+padding-left: 6px;
+}
+QScrollBar::handle:vertical{
+background: gray;
+border-radius: 4px;
+min-height: 20px;
+}
+QScrollBar::add-line:vertical {
+background-color: #212121;
+height: 0px;
+subcontrol-position: bottom;
+subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+background-color: #212121;
+height: 0 px;
+subcontrol-position: top;
+subcontrol-origin: margin;
+}
+QScrollBar::add-page:vertical{
+background-color: #212121;
+}
+QScrollBar::sub-page:vertical{
+background-color: #212121;
+}
+
+QScrollBar:horizontal {        
+border: none;
+height:14px;
+background-color: #212121;
+margin: 0px 0px 0px 0px;
+padding-top: 6px;
+}
+QScrollBar::handle:horizontal{
+background: gray;
+border-radius: 4px;
+min-width: 20px;
+}
+QScrollBar::add-line:horizontal {
+background-color: #212121;
+height: 0px;
+subcontrol-position: bottom;
+subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal {
+background-color: #212121;
+height: 0 px;
+subcontrol-position: top;
+subcontrol-origin: margin;
+}
+QScrollBar::add-page:horizontal{
+background-color: #212121;
+}
+QScrollBar::sub-page:horizontal{
+background-color: #212121;
+}
+
+QComboBox{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}
+QComboBox QAbstractItemView{
+color: white;
+background-color: black;
+}
+
+QTableView{
+background-color: #212121;
+border: 1px solid gray;
+border-radius: 6px;
+color: white;
+}
+
+QDoubleSpinBox{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}
+
+QRadioButton{
+color: white;
+background: transparent;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_1">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="leftMargin">
+           <number>6</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Database name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineEdit_database_server_port">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Database user</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="lineEdit_database_password">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Database server address</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineEdit_database_server_adress">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="lineEdit_database_user">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="lineEdit_database_name">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Database user password</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Database server port</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <property name="leftMargin">
+           <number>6</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="lineEdit_service_adress">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineEdit_service_owner">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_8">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Service address</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Service owner</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="lineEdit_service_website">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Website</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineEdit_service_name">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_13">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Service name</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <layout class="QGridLayout" name="gridLayout_9">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <property name="leftMargin">
+           <number>6</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="6" column="0" colspan="2">
+           <widget class="QPushButton" name="pushButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="text">
+             <string>Skip now</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="lineEdit_service_email_server_port">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Service email</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineEdit_service_email">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Mail server (SMTP)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="lineEdit_service_email_server">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Server port</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineEdit_email_password">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Password</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QPushButton" name="pushButton_save">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../resources.qrc">
+       <normaloff>:/PNG/IMG/done.png</normaloff>:/PNG/IMG/done.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_database_server_adress</tabstop>
+  <tabstop>lineEdit_database_server_port</tabstop>
+  <tabstop>lineEdit_database_name</tabstop>
+  <tabstop>lineEdit_database_user</tabstop>
+  <tabstop>lineEdit_database_password</tabstop>
+  <tabstop>lineEdit_service_name</tabstop>
+  <tabstop>lineEdit_service_owner</tabstop>
+  <tabstop>lineEdit_service_adress</tabstop>
+  <tabstop>lineEdit_service_website</tabstop>
+  <tabstop>lineEdit_service_email</tabstop>
+  <tabstop>lineEdit_email_password</tabstop>
+  <tabstop>lineEdit_service_email_server</tabstop>
+  <tabstop>lineEdit_service_email_server_port</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,7 @@
+CREATE TABLE devices (
+  IP VARCHAR(255) NOT NULL,
+  PRIMARY KEY (IP)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8mb3,
+COLLATE utf8mb3_general_ci;

@@ -1,0 +1,25 @@
+CREATE TABLE current_diagnosis_orders (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  client_id INT(11) DEFAULT NULL,
+  order_number VARCHAR(255) DEFAULT NULL,
+  date_of_admission DATETIME DEFAULT NULL,
+  release_date DATETIME DEFAULT NULL,
+  diagnosis TEXT DEFAULT NULL,
+  repair_description TEXT DEFAULT NULL,
+  remarks TEXT DEFAULT NULL,
+  valuation DOUBLE DEFAULT NULL,
+  paid DOUBLE DEFAULT NULL,
+  seals VARCHAR(255) DEFAULT NULL,
+  system_password VARCHAR(255) DEFAULT NULL,
+  receiptFV INT(11) DEFAULT NULL,
+  serial_number VARCHAR(255) DEFAULT NULL,
+  computer_id INT(11) DEFAULT NULL,
+  symptoms TEXT DEFAULT NULL,
+  items VARCHAR(255) DEFAULT NULL,
+  pickup_code VARCHAR(255) DEFAULT NULL,
+  img TEXT DEFAULT NULL,
+  PRIMARY KEY (id)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8mb3,
+COLLATE utf8mb3_general_ci;

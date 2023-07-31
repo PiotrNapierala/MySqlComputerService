@@ -1,0 +1,9 @@
+CREATE TABLE statistic (
+  id INT(11) UNSIGNED NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  value VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (id, name)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8mb3,
+COLLATE utf8mb3_general_ci;
