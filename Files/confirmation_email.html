@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    .info strong {
+      display: inline-block;
+      width: 150px;
+      font-weight: bold;
+    }
+    .code {
+      margin-top: 30px;
+      text-align: center;
+      background-color: #ddd;
+      padding: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Potwierdzenie przyjęcia komputera do naprawy</h1>
+    <div class="code">
+      <strong>Kod odbioru:</strong> $pickupCode
+    </div>
+    <p>
+      Dziękujemy za złożenie zlecenia naprawy komputera. Poniżej znajdują się szczegóły zgłoszenia:
+    </p>
+    <ul>
+      <li>Numer seryjny komputera: $serialNumber</li>
+      <li>Numer zlecenia: $orderNumber</li>
+    </ul>
+    <p>
+      Prosimy o zachowanie kodu odbioru, który będzie potrzebny do odebrania sprzętu po zakończonej naprawie. Przyjdź do naszego serwisu z tym kodem, abyśmy mogli zweryfikować Twoją tożsamość.
+    </p>
+    <p>
+      Jeśli masz jakiekolwiek pytania dotyczące naprawy, prosimy o kontakt z naszym działem obsługi klienta.
+    </p>
+    <p>
+      Pozdrawiamy,
+      $serviceName
+    </p>
+  </div>
+</body>
+</html>

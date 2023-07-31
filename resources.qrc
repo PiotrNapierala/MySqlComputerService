@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/PNG">
-        <file>IMG/splash.png</file>
         <file>IMG/add.png</file>
         <file>IMG/adress.png</file>
         <file>IMG/calendar.png</file>
@@ -54,7 +53,6 @@
         <file>IMG/6.png</file>
         <file>IMG/arrow_right.png</file>
         <file>IMG/save.png</file>
-        <file>IMG/background_1.jpg</file>
         <file>IMG/stamp.png</file>
         <file>IMG/all.png</file>
         <file>IMG/database.png</file>

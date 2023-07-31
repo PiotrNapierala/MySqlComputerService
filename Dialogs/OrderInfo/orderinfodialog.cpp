@@ -263,6 +263,10 @@ void OrderInfoDialog::on_pushButton_photos_clicked()
 {
     PhotoPreviewDialog dialog(currentOrder->photos, this);
     dialog.exec();
-    if(dialog.accepted) currentOrder->photos = dialog.imgList;
+    if(dialog.accepted)
+    {
+        currentOrder->photos = dialog.imgList;
+        connector.ModifyOrder(currentOrder);
+    }
 }
 

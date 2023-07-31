@@ -85,13 +85,23 @@ bool EmailConnector::SendConfirmationEmail(QString receiverEmail, QString receiv
 	html.replace("$serialNumber", serialNumber);
 	html.replace("$orderNumber", orderNumber);
 	html.replace("$pickupCode", pickupCode);
-    html.replace("$serviceName", databaseConnector.ReadStringGlobalSettings("serviceName"));
+
+    QString serviceName = databaseConnector.ReadStringGlobalSettings("serviceName");
+    QString serviceWebsite = databaseConnector.ReadStringGlobalSettings("serviceWebsite");
+
+    if(serviceWebsite.isEmpty()) html.replace("$serviceName", serviceName);
+    else html.replace("$serviceName", "<a href=\"" + serviceWebsite + "\">" + serviceName + "</a>");
+
     return SendHtmlEmail(html, tr("Acknowledgment of computer receipt"), receiverEmail, receiverName);
 }
 
 bool EmailConnector::SendFinishEmail(QString receiverEmail, QString receiverName)
 {
     QString html = ReadHtmlFile(qApp->applicationDirPath() + "/Files/thanks_email.html");
-	html.replace("$serviceName", databaseConnector.ReadStringGlobalSettings("serviceName"));
+    QString serviceName = databaseConnector.ReadStringGlobalSettings("serviceName");
+    QString serviceWebsite = databaseConnector.ReadStringGlobalSettings("serviceWebsite");
+
+    if(serviceWebsite.isEmpty()) html.replace("$serviceName", serviceName);
+    else html.replace("$serviceName", "<a href=\"" + serviceWebsite + "\">" + serviceName + "</a>");
     return SendHtmlEmail(html, tr("Thanks for picking up the computer"), receiverEmail, receiverName);
 }
