@@ -36,6 +36,7 @@ SOURCES += \
     Dialogs/Settings/settingsdialog.cpp \
     Dialogs/Statistic/statisticsdialog.cpp \
     Dialogs/UserAdmin/useramindialog.cpp \
+    Dialogs/WhatsNew/whatsnewdialog.cpp \
     Libraries/ApplicationLog/applicationlog.cpp \
     Libraries/DatabaseConnector/databaseconnector.cpp \
     Libraries/EmailConnector/emailconnector.cpp \
@@ -79,6 +80,7 @@ HEADERS += \
     Dialogs/Settings/settingsdialog.h \
     Dialogs/Statistic/statisticsdialog.h \
     Dialogs/UserAdmin/useramindialog.h \
+    Dialogs/WhatsNew/whatsnewdialog.h \
     Dialogs\MainWindow\mainwindow.h \
     Libraries/ApplicationLog/applicationlog.h \
     Libraries/DatabaseConnector/databaseconnector.h \
@@ -117,6 +119,7 @@ FORMS += \
     Dialogs/Settings/settingsdialog.ui \
     Dialogs/Statistic/statisticsdialog.ui \
     Dialogs/UserAdmin/useramindialog.ui \
+    Dialogs/WhatsNew/whatsnewdialog.ui \
     Dialogs\MainWindow\mainwindow.ui
 
 # Default rules for deployment.

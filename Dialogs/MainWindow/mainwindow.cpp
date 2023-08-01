@@ -23,6 +23,7 @@ under the License.
 #include "Dialogs/MainWindow/mainwindow.h"
 #include "Dialogs/AddMenu/addmenudialog.h"
 #include "Dialogs/FinishOrder/finishorderdialog.h"
+#include "Dialogs/WhatsNew/whatsnewdialog.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent, User *user)
@@ -50,6 +51,13 @@ void MainWindow::SetupWindow()
     QTimer *timeTimer = new QTimer(this);
     connect(timeTimer, SIGNAL(timeout()), this, SLOT(UpdateTime()));
     timeTimer->start(1000);
+
+    if(settings.value("version").toInt() < QCoreApplication::applicationVersion().replace(".", "").toInt())
+    {
+        WhatsNewDialog whatsNew;
+        whatsNew.exec();
+        settings.setValue("version", QCoreApplication::applicationVersion().replace(".", "").toInt());
+    }
 }
 
 void MainWindow::UpdateTime()
@@ -145,6 +153,11 @@ void MainWindow::on_pushButton_statistics_clicked()
 void MainWindow::on_listWidget_to_diagnosis_itemDoubleClicked(QListWidgetItem *item)
 {
     Q_UNUSED(item);
+
+    int currentCount = ui->listWidget_to_diagnosis->count();
+    RefreshOrders();
+    if(currentCount != ui->listWidget_to_diagnosis->count()) return;
+
     OrderMenuDialog orderMenuDialog(this, currentUser->admin);
 	orderMenuDialog.exec();
 	int selectedOption = orderMenuDialog.selectedOption;
@@ -184,6 +197,11 @@ void MainWindow::on_listWidget_to_diagnosis_itemDoubleClicked(QListWidgetItem *i
 void MainWindow::on_listWidget_to_repair_itemDoubleClicked(QListWidgetItem *item)
 {
 	Q_UNUSED(item);
+
+    int currentCount = ui->listWidget_to_repair->count();
+    RefreshOrders();
+    if(currentCount != ui->listWidget_to_repair->count()) return;
+
     OrderMenuDialog orderMenuDialog(this, currentUser->admin);
     orderMenuDialog.exec();
 	int selectedOption = orderMenuDialog.selectedOption;
@@ -224,6 +242,11 @@ void MainWindow::on_listWidget_to_repair_itemDoubleClicked(QListWidgetItem *item
 void MainWindow::on_listWidget_done_itemDoubleClicked(QListWidgetItem *item)
 {
 	Q_UNUSED(item);
+
+    int currentCount = ui->listWidget_done->count();
+    RefreshOrders();
+    if(currentCount != ui->listWidget_done->count()) return;
+
     OrderMenuDialog orderMenuDialog(this, currentUser->admin);
 	orderMenuDialog.exec();
 	int selectedOption = orderMenuDialog.selectedOption;

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WhatsNewDialog</class>
+ <widget class="QDialog" name="WhatsNewDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources.qrc">
+    <normaloff>:/PNG/IMG/info.png</normaloff>:/PNG/IMG/info.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color: #000000;
+}
+
+QWidget{
+background-color: #000000;
+}
+
+QGroupBox{
+background-color: #212121;
+border: none;
+padding: 4px;
+border-radius: 6px;
+color: white;
+}
+
+QPushButton{
+background-color: #303030;
+border: 2px solid gray;
+border-radius: 4px;
+color: white;
+}
+QPushButton:hover{
+border-color: white;
+}
+
+QLineEdit{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}
+QLineEdit:focus{
+border-color: white;
+}
+
+QTextEdit{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}
+QTextEdit:focus{
+border-color: white;
+}
+
+QLabel{
+color: white;
+background: transparent;
+}
+
+QListWidget{
+background: transparent;
+border: 1px solid gray;
+border-radius: 6px;
+padding: 6px;
+}
+QListWidget::item{
+background-color: rgba(255,255,255,50);
+border: none;
+color: white;
+border-radius: 6px;
+padding: 6px;
+margin-top: 6px;
+}
+QListWidget::item:hover{
+background-color: rgba(255,255,255,100);
+}
+
+QCheckBox{
+background: transparent;
+color: white;
+}
+QCheckBox::indicator{
+width:24px;
+height: 24px;
+border: 1px solid gray;
+border-radius: 4px;
+}
+QCheckBox::indicator:hecked{
+image: url(:/PNG/IMG/done.png);
+}
+QCheckBox::indicator:unchecked{
+image: none;
+}
+
+QTabWidget::pane{
+background: transparent;
+border: none;
+padding: 4px;
+border-radius: 6px;
+}
+QTabBar::tab{
+background-color: #303030;
+border: 2px solid gray;
+border-radius: 4px;
+color: white;
+padding-left: 6px;
+padding-right: 6px;
+padding-top: 3px;
+padding-bottom: 3px;
+margin-left: 2px;
+}
+QTabBar::tab:hover{
+border-color: white;
+}
+QTabBar::tab:selected{
+border-color: white;
+}
+
+QScrollBar:vertical {        
+border: none;
+width:14px;
+background-color: #212121;
+margin: 0px 0px 0px 0px;
+padding-left: 6px;
+}
+QScrollBar::handle:vertical{
+background: gray;
+border-radius: 4px;
+min-height: 20px;
+}
+QScrollBar::add-line:vertical {
+background-color: #212121;
+height: 0px;
+subcontrol-position: bottom;
+subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+background-color: #212121;
+height: 0 px;
+subcontrol-position: top;
+subcontrol-origin: margin;
+}
+QScrollBar::add-page:vertical{
+background-color: #212121;
+}
+QScrollBar::sub-page:vertical{
+background-color: #212121;
+}
+
+QScrollBar:horizontal {        
+border: none;
+height:14px;
+background-color: #212121;
+margin: 0px 0px 0px 0px;
+padding-top: 6px;
+}
+QScrollBar::handle:horizontal{
+background: gray;
+border-radius: 4px;
+min-width: 20px;
+}
+QScrollBar::add-line:horizontal {
+background-color: #212121;
+height: 0px;
+subcontrol-position: bottom;
+subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal {
+background-color: #212121;
+height: 0 px;
+subcontrol-position: top;
+subcontrol-origin: margin;
+}
+QScrollBar::add-page:horizontal{
+background-color: #212121;
+}
+QScrollBar::sub-page:horizontal{
+background-color: #212121;
+}
+
+QComboBox{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}
+QComboBox QAbstractItemView{
+color: white;
+background-color: black;
+}
+
+QTableView{
+background-color: #212121;
+border: 1px solid gray;
+border-radius: 6px;
+color: white;
+}
+
+QDoubleSpinBox{
+background-color: #303030;
+border: 1px solid gray;
+border-radius: 4px;
+color: white;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>6</number>
+      </property>
+      <property name="rightMargin">
+       <number>6</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
+      </property>
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <item row="1" column="0">
+       <widget class="QTextEdit" name="textEdit_whats_new">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QComboBox" name="comboBox_ver">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
