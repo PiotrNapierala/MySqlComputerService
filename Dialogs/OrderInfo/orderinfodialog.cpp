@@ -66,6 +66,16 @@ void OrderInfoDialog::SetEditMode(bool editMode)
 void OrderInfoDialog::LoadData(Order *order)
 {
     this->setWindowTitle(tr("Order ") + order->orderNumber);
+    if(connector.ReadIntGlobalSettings("enableExtensions") == true && !connector.ReadStringGlobalSettings("apacheServerAdress").isEmpty())
+    {
+        ui->pushButton_photos->setVisible(true);
+        ui->tabWidget->setTabVisible(5, true);
+    }
+    else
+    {
+        ui->pushButton_photos->setVisible(false);
+        ui->tabWidget->setTabVisible(5, false);
+    }
 
 	QList<Client*> clientsFound = connector.ReadClientsWhere(connector.CLI_tb, "id = " + QString::number(order->clientID));
 	QList<Computer*> computersFound = connector.ReadComputersWhere("id = " + QString::number(order->computerID));
