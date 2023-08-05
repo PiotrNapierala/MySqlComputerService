@@ -58,6 +58,8 @@ void MainWindow::SetupWindow()
         whatsNew.exec();
         settings.setValue("version", QCoreApplication::applicationVersion().replace(".", "").toInt());
     }
+
+    ui->pushButton_update->setVisible(serviceCore.CheckVersion());
 }
 
 void MainWindow::UpdateTime()
@@ -337,5 +339,24 @@ void MainWindow::on_pushButton_info_clicked()
 void MainWindow::on_pushButton_refresh_clicked()
 {
     RefreshOrders();
+}
+
+void MainWindow::on_pushButton_update_clicked()
+{
+    AskDialog askDialog(tr("A new version is available. Download and install?"));
+    askDialog.exec();
+    if(askDialog.accepted)
+    {
+        this->hide();
+        InstallDialog installDialog;
+        installDialog.exec();
+
+        if(!installDialog.installOK)
+        {
+            this->show();
+            InfoDialog infoDialog(tr("Error downloading updates"), 1);
+            infoDialog.exec();
+        }
+    }
 }
 

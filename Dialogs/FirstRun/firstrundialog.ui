@@ -323,7 +323,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -359,7 +359,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -395,7 +395,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -413,7 +413,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -431,7 +431,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -554,7 +554,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -572,7 +572,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -652,7 +652,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -686,6 +686,9 @@ background: transparent;
              <font>
               <pointsize>14</pointsize>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -798,7 +801,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -834,7 +837,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -870,7 +873,7 @@ background: transparent;
              </font>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::StrongFocus</enum>
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>
@@ -917,6 +920,9 @@ background: transparent;
              <font>
               <pointsize>14</pointsize>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::TabFocus</enum>
             </property>
            </widget>
           </item>

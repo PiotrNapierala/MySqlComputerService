@@ -251,7 +251,7 @@ color: white;
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page_1">
       <layout class="QGridLayout" name="gridLayout_2">
@@ -311,6 +311,9 @@ color: white;
                <font>
                 <pointsize>16</pointsize>
                </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
               </property>
               <property name="text">
                <string>Confirm</string>

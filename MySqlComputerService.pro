@@ -25,6 +25,7 @@ SOURCES += \
     Dialogs/GetClient/getclientdialog.cpp \
     Dialogs/GetComputer/getcomputerdialog.cpp \
     Dialogs/Info/infodialog.cpp \
+    Dialogs/Install/installdialog.cpp \
     Dialogs/Language/language.cpp \
     Dialogs/Login/logindialog.cpp \
     Dialogs/MoveToCompleted/movetocompleteddialog.cpp \
@@ -69,6 +70,7 @@ HEADERS += \
     Dialogs/GetClient/getclientdialog.h \
     Dialogs/GetComputer/getcomputerdialog.h \
     Dialogs/Info/infodialog.h \
+    Dialogs/Install/installdialog.h \
     Dialogs/Language/language.h \
     Dialogs/Login/logindialog.h \
     Dialogs/MoveToCompleted/movetocompleteddialog.h \
@@ -108,6 +110,7 @@ FORMS += \
     Dialogs/GetClient/getclientdialog.ui \
     Dialogs/GetComputer/getcomputerdialog.ui \
     Dialogs/Info/infodialog.ui \
+    Dialogs/Install/installdialog.ui \
     Dialogs/Language/language.ui \
     Dialogs/Login/logindialog.ui \
     Dialogs/MoveToCompleted/movetocompleteddialog.ui \

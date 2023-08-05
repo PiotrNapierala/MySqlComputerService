@@ -801,6 +801,24 @@
     </message>
 </context>
 <context>
+    <name>InstallDialog</name>
+    <message>
+        <location filename="Dialogs/Install/installdialog.ui" line="14"/>
+        <source>Install</source>
+        <translation>Zainstaluj</translation>
+    </message>
+    <message>
+        <location filename="Dialogs/Install/installdialog.ui" line="272"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/PNG/IMG/download.png&quot; width=&quot;60&quot; height=&quot;60&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="Dialogs/Install/installdialog.ui" line="294"/>
+        <source>Please wait while downloading...</source>
+        <translation>Czekaj, trwa pobieranie aktualizacji</translation>
+    </message>
+</context>
+<context>
     <name>Language</name>
     <message>
         <location filename="Dialogs/Language/language.ui" line="26"/>
@@ -885,39 +903,54 @@
         <translation>Gotowe</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.ui" line="801"/>
-        <location filename="Dialogs/MainWindow/mainwindow.ui" line="813"/>
+        <location filename="Dialogs/MainWindow/mainwindow.ui" line="663"/>
+        <location filename="Dialogs/MainWindow/mainwindow.ui" line="688"/>
         <source>-</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.ui" line="899"/>
+        <location filename="Dialogs/MainWindow/mainwindow.ui" line="861"/>
+        <source>Update</source>
+        <translation>Aktualizuj</translation>
+    </message>
+    <message>
+        <location filename="Dialogs/MainWindow/mainwindow.ui" line="925"/>
         <source>Statistics</source>
         <translation>Statystyki</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.ui" line="943"/>
+        <location filename="Dialogs/MainWindow/mainwindow.ui" line="969"/>
         <source>Search</source>
         <translation>Szukaj</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.ui" line="978"/>
+        <location filename="Dialogs/MainWindow/mainwindow.ui" line="1004"/>
         <source>Add</source>
         <translation>Dodaj</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="163"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="202"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="242"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="178"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="222"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="267"/>
         <source>Are you sure you want to move the order to cancelled?</source>
         <translation>Przenieść zlecenie do anulowanych?</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="173"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="212"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="252"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="188"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="232"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="277"/>
         <source>Are you sure you want to delete the order?</source>
         <translation>Usunąć zlecenie?</translation>
+    </message>
+    <message>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="346"/>
+        <source>A new version is available. Download and install?</source>
+        <translation>Dostępna jest nowa wersja. Pobrać i zainstalować?</translation>
+    </message>
+    <message>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="357"/>
+        <source>Error downloading updates</source>
+        <translation>Błąd podczas pobierania aktualizacji</translation>
     </message>
 </context>
 <context>
@@ -1174,12 +1207,12 @@
         <translation>Zlecenie </translation>
     </message>
     <message>
-        <location filename="Dialogs/OrderInfo/orderinfodialog.cpp" line="161"/>
+        <location filename="Dialogs/OrderInfo/orderinfodialog.cpp" line="171"/>
         <source>Order saved</source>
         <translation>Zapisano zlecenie</translation>
     </message>
     <message>
-        <location filename="Dialogs/OrderInfo/orderinfodialog.cpp" line="231"/>
+        <location filename="Dialogs/OrderInfo/orderinfodialog.cpp" line="241"/>
         <source>Delete an order?</source>
         <translation>Usunąć zlecenie?</translation>
     </message>
@@ -1315,12 +1348,12 @@
     <message>
         <location filename="Dialogs/Settings/settingsdialog.ui" line="319"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="Dialogs/Settings/settingsdialog.ui" line="328"/>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="Dialogs/Settings/settingsdialog.ui" line="362"/>

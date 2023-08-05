@@ -535,7 +535,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+         <enum>Qt::TabFocus</enum>
         </property>
         <property name="placeholderText">
          <string/>
@@ -577,7 +577,7 @@ color: white;
            </font>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::StrongFocus</enum>
+           <enum>Qt::TabFocus</enum>
           </property>
           <property name="echoMode">
            <enum>QLineEdit::PasswordEchoOnEdit</enum>
@@ -653,7 +653,7 @@ color: white;
            </font>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::StrongFocus</enum>
+           <enum>Qt::TabFocus</enum>
           </property>
          </widget>
         </item>

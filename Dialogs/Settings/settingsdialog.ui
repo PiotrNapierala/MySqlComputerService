@@ -245,6 +245,9 @@ color: white;
    </property>
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -314,6 +317,9 @@ color: white;
                 <pointsize>14</pointsize>
                </font>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
               <item>
                <property name="text">
                 <string>English</string>
@@ -381,6 +387,9 @@ color: white;
                <font>
                 <pointsize>14</pointsize>
                </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
               </property>
              </widget>
             </item>

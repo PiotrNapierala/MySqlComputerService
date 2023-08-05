@@ -34,11 +34,17 @@ under the License.
 #include <QValidator>
 #include <QRegularExpression>
 #include <QLineEdit>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QNetworkAccessManager>
+#include <QStandardPaths>
 
 #include "Libraries/DatabaseConnector/databaseconnector.h"
 
-class ServiceCore
+class ServiceCore : public QObject
 {
+    Q_OBJECT
+
 public:
 	QString GetOrderNumber();
 	QPixmap GetProducerIcon(QString name);
@@ -46,6 +52,8 @@ public:
     void PrintHtml(QString html);
     void PrintGDPR();
     void PrintConsentToViewFiles();
+    bool CheckVersion();
+    bool DownloadNewVersion();
     QValidator *GetDigitalValidator(QLineEdit *lineEdit);
     QValidator *GetIPValidator(QLineEdit *lineEdit);
     QValidator *GetEmailValidator(QLineEdit *lineEdit);

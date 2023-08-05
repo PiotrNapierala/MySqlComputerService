@@ -346,7 +346,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+         <enum>Qt::TabFocus</enum>
         </property>
        </widget>
       </item>
@@ -422,7 +422,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+         <enum>Qt::TabFocus</enum>
         </property>
        </widget>
       </item>
@@ -477,7 +477,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+         <enum>Qt::TabFocus</enum>
         </property>
         <property name="suffix">
          <string>$</string>

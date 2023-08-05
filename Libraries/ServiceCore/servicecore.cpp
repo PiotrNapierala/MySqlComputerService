@@ -114,6 +114,79 @@ void ServiceCore::PrintConsentToViewFiles()
     }
 }
 
+bool ServiceCore::CheckVersion()
+{
+    QUrl url("http://pnapierala.pl/MySqlComputerService/version.txt");
+    QNetworkRequest request(url);
+
+    QNetworkAccessManager manager;
+    QNetworkReply* reply = manager.get(request);
+
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
+    if (reply->error() == QNetworkReply::NoError)
+    {
+        QString version = reply->readAll();
+
+        if (version.trimmed() == QCoreApplication::applicationVersion().trimmed())
+        {
+            reply->deleteLater();
+            return false;
+        }
+        else
+        {
+            reply->deleteLater();
+            return true;
+        }
+    }
+    else
+    {
+        reply->deleteLater();
+        return false;
+    }
+}
+
+bool ServiceCore::DownloadNewVersion()
+{
+    QUrl url("http://pnapierala.pl/MySqlComputerService/exe/latest.exe");
+    QNetworkRequest request(url);
+
+    QNetworkAccessManager manager;
+    QNetworkReply* reply = manager.get(request);
+
+    QEventLoop loop;
+
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+
+    loop.exec();
+
+    if (reply->error() == QNetworkReply::NoError)
+    {
+        QDir dir(qApp->applicationDirPath() + "/Downloads/");
+        if(!dir.exists()) dir.mkpath(".");
+
+        QFile destinationFile(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation) + "/MySqlComputerService_latest_" + QDate::currentDate().toString("dd_MM_yyyy") + ".exe");
+        if (!destinationFile.open(QIODevice::WriteOnly))
+        {
+            reply->deleteLater();
+            return false;
+        }
+
+        destinationFile.write(reply->readAll());
+        destinationFile.close();
+
+        reply->deleteLater();
+        return true;
+    }
+    else
+    {
+        reply->deleteLater();
+        return false;
+    }
+}
+
 QValidator *ServiceCore::GetDigitalValidator(QLineEdit *lineEdit)
 {
     QRegularExpression regExp("\\d+");

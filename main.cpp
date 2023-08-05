@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	QCoreApplication::setOrganizationName("Piotr Napierala");
 	QCoreApplication::setApplicationName("MySqlComputerService");
-    QCoreApplication::setApplicationVersion("1.2.4");
+    QCoreApplication::setApplicationVersion("1.2.5");
 
     QSettings settings;
     QTranslator translator;

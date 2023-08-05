@@ -54,6 +54,8 @@ under the License.
 #include "Dialogs/Settings/settingsdialog.h"
 #include "Dialogs/Statistic/statisticsdialog.h"
 #include "Dialogs/About/aboutdialog.h"
+#include "Dialogs/Install/installdialog.h"
+#include "Dialogs/Info/infodialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -77,12 +79,10 @@ private slots:
 	void on_pushButton_logout_clicked();
 	void on_pushButton_full_window_clicked();
     void on_pushButton_settings_clicked();
-
     void UpdateTime();
-
     void on_pushButton_info_clicked();
-
     void on_pushButton_refresh_clicked();
+    void on_pushButton_update_clicked();
 
 private:
 	Ui::MainWindow *ui;

@@ -276,6 +276,9 @@ color: white;
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
         <property name="iconSize">
          <size>
           <width>32</width>

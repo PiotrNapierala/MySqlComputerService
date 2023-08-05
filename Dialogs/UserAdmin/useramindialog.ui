@@ -431,6 +431,9 @@ color: white;
           <pointsize>14</pointsize>
          </font>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
        </widget>
       </item>
      </layout>
