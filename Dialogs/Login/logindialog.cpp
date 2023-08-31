@@ -30,6 +30,7 @@ LoginDialog::LoginDialog(QWidget *parent) :
 	ui->setupUi(this);
 	ui->lineEdit_login->setFocus();
     ui->lineEdit_login->setValidator(serviceCore.GetUserValidator(ui->lineEdit_login));
+    CheckTempDatabasePassword();
 }
 
 LoginDialog::~LoginDialog()
@@ -39,16 +40,125 @@ LoginDialog::~LoginDialog()
 
 void LoginDialog::on_pushButton_login_clicked()
 {
-	if(connector.ValidateUser(ui->lineEdit_login->text(), ui->lineEdit_password->text()))
-	{
-		loginCorrect = true;
-		currentUser = connector.currentUser;
-		this->close();
-	}
-	else
-	{
-		ui->lineEdit_login->clear();
-		ui->lineEdit_password->clear();
+    QString userLogin = ui->lineEdit_login->text();
+    QString userPassword = ui->lineEdit_password->text();
+
+    MyCrypto crypto(crypto.HashString(userPassword, QCryptographicHash::Sha256), QCryptographicHash::Sha256);
+    QString encrpytedPassword = settings.value(userLogin + "/database_password").toString();
+
+    if(encrpytedPassword.isEmpty())
+    {
+        ui->lineEdit_login->clear();
+        ui->lineEdit_password->clear();
         ui->lineEdit_login->setFocus();
+    }
+
+    QString decryptedPassword = crypto.DecryptData(encrpytedPassword);
+    QString databasePasswordHash = settings.value("database/database_password_hash").toString();
+
+    if(crypto.HashString(decryptedPassword, QCryptographicHash::Sha256) == databasePasswordHash)
+    {
+        if(connector.SetupConnection(decryptedPassword))
+        {
+            connector.CreateTables();
+
+            while(connector.GetUsersCount() == 0)
+            {
+                AddUserDialog dialog(nullptr, true);
+                dialog.exec();
+                if(!dialog.accepted) exit(1);
+                else return;
+            }
+
+            while(connector.ReadIntGlobalSettings("isSet") == false)
+            {
+                FirstRunDialog dialog(nullptr, 1);
+                dialog.exec();
+                if(!dialog.accepted) exit(1);
+                else return;
+            }
+
+            if(connector.ValidateUser(ui->lineEdit_login->text(), ui->lineEdit_password->text()))
+            {
+                currentUser = connector.currentUser;
+
+                if(!currentUser->token.isEmpty())
+                {
+                    StringDialog dialog(tr("Enter 2FA code"), QLineEdit::Password);
+                    dialog.exec();
+                    if(dialog.accepted)
+                    {
+                        QString currentTOTP = mytotp.GetTOTPFromToken(currentUser->token);
+                        if(currentTOTP == dialog.text)
+                        {
+                            loginCorrect = true;
+                            this->close();
+                        }
+                        else
+                        {
+                            ui->lineEdit_login->clear();
+                            ui->lineEdit_password->clear();
+                            ui->lineEdit_login->setFocus();
+                        }
+                    }
+                    else
+                    {
+                        ui->lineEdit_login->clear();
+                        ui->lineEdit_password->clear();
+                        ui->lineEdit_login->setFocus();
+                    }
+                }
+                else
+                {
+                    loginCorrect = true;
+                    this->close();
+                }
+            }
+            else
+            {
+                ui->lineEdit_login->clear();
+                ui->lineEdit_password->clear();
+                ui->lineEdit_login->setFocus();
+            }
+        }
+        else
+        {
+            FirstRunDialog dialog(nullptr, 0);
+            dialog.exec();
+            if(!dialog.accepted) exit(1);
+            else return;
+        }
+    }
+    else
+    {
+        ui->lineEdit_login->clear();
+        ui->lineEdit_password->clear();
+        ui->lineEdit_login->setFocus();
+    }
+}
+
+void LoginDialog::CheckTempDatabasePassword()
+{
+    QString tempDatabasePassword = settings.value("database/temp_database_password").toString();
+    if(!tempDatabasePassword.isEmpty())
+    {
+        if(connector.SetupConnection(tempDatabasePassword))
+        {
+            connector.CreateTables();
+
+            while(connector.GetUsersCount() == 0)
+            {
+                AddUserDialog dialog(nullptr, true);
+                dialog.exec();
+                if(!dialog.accepted) exit(1);
+                else settings.setValue("database/temp_database_password", "");
+            }
+        }
+        else
+        {
+            FirstRunDialog dialog(nullptr, 0);
+            dialog.exec();
+            if(!dialog.accepted) exit(1);
+        }
     }
 }

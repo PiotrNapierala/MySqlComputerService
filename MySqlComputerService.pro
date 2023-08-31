@@ -36,15 +36,17 @@ SOURCES += \
     Dialogs/Search/searchdialog.cpp \
     Dialogs/Settings/settingsdialog.cpp \
     Dialogs/Statistic/statisticsdialog.cpp \
+    Dialogs/String/stringdialog.cpp \
     Dialogs/UserAdmin/useramindialog.cpp \
-    Dialogs/WhatsNew/whatsnewdialog.cpp \
     Libraries/ApplicationLog/applicationlog.cpp \
     Libraries/DatabaseConnector/databaseconnector.cpp \
     Libraries/EmailConnector/emailconnector.cpp \
     Libraries/ImageDownloader/imagedownloader.cpp \
+    Libraries/MyCrypto/mycrypto.cpp \
     Libraries/QRConnector/qrconnector.cpp \
     Libraries/ServiceCore/servicecore.cpp \
     Libraries/StatisticConnector/statisticconnector.cpp \
+    Libraries/Totp/totp.cpp \
     QR-Code-generator/qrcodegen.cpp \
     main.cpp \
     Dialogs\MainWindow\mainwindow.cpp
@@ -81,16 +83,18 @@ HEADERS += \
     Dialogs/Search/searchdialog.h \
     Dialogs/Settings/settingsdialog.h \
     Dialogs/Statistic/statisticsdialog.h \
+    Dialogs/String/stringdialog.h \
     Dialogs/UserAdmin/useramindialog.h \
-    Dialogs/WhatsNew/whatsnewdialog.h \
     Dialogs\MainWindow\mainwindow.h \
     Libraries/ApplicationLog/applicationlog.h \
     Libraries/DatabaseConnector/databaseconnector.h \
     Libraries/EmailConnector/emailconnector.h \
     Libraries/ImageDownloader/imagedownloader.h \
+    Libraries/MyCrypto/mycrypto.h \
     Libraries/QRConnector/qrconnector.h \
     Libraries/ServiceCore/servicecore.h \
     Libraries/StatisticConnector/statisticconnector.h \
+    Libraries/Totp/totp.h \
     QR-Code-generator/qrcodegen.hpp
 
 FORMS += \
@@ -121,8 +125,8 @@ FORMS += \
     Dialogs/Search/searchdialog.ui \
     Dialogs/Settings/settingsdialog.ui \
     Dialogs/Statistic/statisticsdialog.ui \
+    Dialogs/String/stringdialog.ui \
     Dialogs/UserAdmin/useramindialog.ui \
-    Dialogs/WhatsNew/whatsnewdialog.ui \
     Dialogs\MainWindow\mainwindow.ui
 
 # Default rules for deployment.

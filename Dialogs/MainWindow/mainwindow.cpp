@@ -21,9 +21,6 @@ under the License.
 */
 
 #include "Dialogs/MainWindow/mainwindow.h"
-#include "Dialogs/AddMenu/addmenudialog.h"
-#include "Dialogs/FinishOrder/finishorderdialog.h"
-#include "Dialogs/WhatsNew/whatsnewdialog.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent, User *user)
@@ -33,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent, User *user)
 	ui->setupUi(this);
     currentUser = user;
     loginTime = 0;
-	SetupWindow();
+    SetupWindow();
 }
 
 MainWindow::~MainWindow()
@@ -43,21 +40,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::SetupWindow()
 {
-    ui->label_copyright->setText("©" + QCoreApplication::organizationName() + " 2023\n" + QCoreApplication::applicationName() + " v" + QCoreApplication::applicationVersion());
+    ui->label_copyright->setText("©" + QCoreApplication::organizationName() + " 2023\n" + QCoreApplication::applicationName() + " v" + QCoreApplication::applicationVersion() + " beta");
 
-	RefreshOrders();
+    RefreshOrders();
     ui->pushButton_statistics->setVisible(currentUser->admin);
 
     QTimer *timeTimer = new QTimer(this);
     connect(timeTimer, SIGNAL(timeout()), this, SLOT(UpdateTime()));
     timeTimer->start(1000);
-
-    if(settings.value("version").toInt() < QCoreApplication::applicationVersion().replace(".", "").toInt())
-    {
-        WhatsNewDialog whatsNew;
-        whatsNew.exec();
-        settings.setValue("version", QCoreApplication::applicationVersion().replace(".", "").toInt());
-    }
 
     ui->pushButton_update->setVisible(serviceCore.CheckVersion());
 }

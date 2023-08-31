@@ -278,7 +278,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+         <enum>Qt::ClickFocus</enum>
         </property>
        </widget>
       </item>

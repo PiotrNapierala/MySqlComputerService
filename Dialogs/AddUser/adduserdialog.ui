@@ -264,21 +264,6 @@ color: white;
       <property name="spacing">
        <number>4</number>
       </property>
-      <item row="3" column="0" colspan="3">
-       <widget class="QCheckBox" name="checkBox_admin">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
-        </property>
-        <property name="text">
-         <string>Admin</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="1">
        <widget class="QLabel" name="label_login">
         <property name="minimumSize">
@@ -330,7 +315,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::TabFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
         <property name="placeholderText">
          <string>Provide your username</string>
@@ -351,7 +336,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::TabFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
@@ -375,7 +360,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::TabFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
@@ -419,6 +404,36 @@ color: white;
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/PNG/IMG/password.png&quot; width=&quot;30&quot; height=&quot;30&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QCheckBox" name="checkBox_admin">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="text">
+         <string>Admin</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QCheckBox" name="checkBox_two_factor">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="text">
+         <string>Two-factor authentication</string>
         </property>
        </widget>
       </item>

@@ -33,6 +33,7 @@ ClientInfoDialog::ClientInfoDialog(Client *client, User *user, QWidget *parent) 
     currentUser = user;
     ui->pushButton_remove_client->setVisible(user->admin);
     ui->lineEdit_email->setValidator(serviceCore.GetEmailValidator(ui->lineEdit_email));
+    ui->lineEdit_search->setFocus();
 }
 
 ClientInfoDialog::~ClientInfoDialog()

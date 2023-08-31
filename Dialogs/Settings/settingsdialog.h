@@ -38,6 +38,7 @@ under the License.
 
 #include "Libraries/DatabaseConnector/databaseconnector.h"
 #include "Libraries/ServiceCore/servicecore.h"
+#include "Libraries/MyCrypto/mycrypto.h"
 
 #include "Classes/User/user.h"
 
@@ -61,7 +62,6 @@ private slots:
     void on_pushButton_get_backup_path_clicked();
     void on_pushButton_run_backup_clicked();
     void on_pushButton_add_ip_clicked();
-
     void on_listWidget_ip_list_itemDoubleClicked(QListWidgetItem *item);
 
 private:

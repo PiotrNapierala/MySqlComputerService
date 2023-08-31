@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 	QCoreApplication::setOrganizationName("Piotr Napierala");
-	QCoreApplication::setApplicationName("MySqlComputerService");
-    QCoreApplication::setApplicationVersion("1.2.5");
+    QCoreApplication::setApplicationName("MySqlComputerService");
+    QCoreApplication::setApplicationVersion("1.3.0");
 
     QSettings settings;
     QTranslator translator;
@@ -63,32 +63,9 @@ int main(int argc, char *argv[])
 
     while(settings.value("database/database_server_adress").toString().isEmpty() || settings.value("database/database_server_port").toInt() == 0 ||
            settings.value("database/database_name").toString().isEmpty() || settings.value("database/database_user").toString().isEmpty() ||
-           settings.value("database/database_password").toString().isEmpty())
+           settings.value("database/database_password_hash").toString().isEmpty())
     {
         FirstRunDialog dialog(nullptr, 0);
-        dialog.exec();
-        if(!dialog.accepted) exit(1);
-    }
-
-    while(!connector.SetupConnection())
-    {
-        FirstRunDialog dialog(nullptr, 0);
-        dialog.exec();
-        if(!dialog.accepted) exit(1);
-    }
-
-    connector.CreateTables();
-
-    while(connector.GetUsersCount() == 0)
-    {
-        AddUserDialog dialog(nullptr, true);
-        dialog.exec();
-        if(!dialog.accepted) exit(1);
-    }
-
-    while(connector.ReadIntGlobalSettings("isSet") == false)
-    {
-        FirstRunDialog dialog(nullptr, 1);
         dialog.exec();
         if(!dialog.accepted) exit(1);
     }

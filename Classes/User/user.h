@@ -28,8 +28,8 @@ under the License.
 class User
 {
 public:
-	int id;
-	QString login, password;
+    int id;
+    QString login, password, token;
 	bool active, admin;
 };
 

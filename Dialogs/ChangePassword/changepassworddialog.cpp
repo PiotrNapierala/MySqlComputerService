@@ -31,6 +31,7 @@ ChangePasswordDialog::ChangePasswordDialog(QWidget *parent, User *user, bool adm
     selectedUser = user;
     adminRights = admin;
     if(adminRights) ui->lineEdit_old_password->setEnabled(false);
+    ui->lineEdit_old_password->setFocus();
 }
 
 ChangePasswordDialog::~ChangePasswordDialog()
@@ -47,10 +48,55 @@ void ChangePasswordDialog::on_pushButton_save_clicked()
     {
         if(ui->lineEdit_password->text() == ui->lineEdit_password_confirm->text() && !ui->lineEdit_password->text().isEmpty())
         {
-            selectedUser->password = ui->lineEdit_password->text();
-            connector.ModifyUser(selectedUser);
-            passwordChanged = true;
-            this->close();
+            if(ui->checkBox_two_factor->isChecked())
+            {
+                selectedUser->token = mytotp.GenerateRandomBase32Token(60);
+
+                QString QRdata = "otpauth://totp/MySqlComputerService-" + selectedUser->login + "?secret=" + selectedUser->token;
+                QPixmap QR = qrconnector.GenerateQR(QRdata);
+                QLabel *QRLabel = new QLabel(this);
+                QRLabel->setPixmap(QR.scaled(200, 200));
+
+                QDialog QRdialog;
+                QHBoxLayout *layout = new QHBoxLayout(&QRdialog);
+                layout->setAlignment(Qt::AlignCenter);
+                layout->addWidget(QRLabel);
+
+                QRdialog.setLayout(layout);
+                QRdialog.setWindowTitle("QR code");
+                QRdialog.setFixedSize(QSize(240, 240));
+                QRdialog.setWindowIcon(QPixmap(":/PNG/IMG/qr.png"));
+
+                QRdialog.exec();
+
+                StringDialog dialog("Enter 2FA code", QLineEdit::Password);
+                dialog.exec();
+                if(dialog.accepted && mytotp.GetTOTPFromToken(selectedUser->token) == dialog.text)
+                {
+                    MyCrypto crypto(crypto.HashString(ui->lineEdit_password->text(), QCryptographicHash::Sha256), QCryptographicHash::Sha256);
+                    selectedUser->password = ui->lineEdit_password->text();
+                    if(connector.ModifyUser(selectedUser))
+                    {
+                        settings.setValue(selectedUser->login + "/database_password", crypto.EncryptData(connector.GetDatabasePassword()));
+                        passwordChanged = true;
+                        this->close();
+                    }
+                    else ui->lineEdit_old_password->setFocus();
+                }
+            }
+            else
+            {
+                MyCrypto crypto(crypto.HashString(ui->lineEdit_password->text(), QCryptographicHash::Sha256), QCryptographicHash::Sha256);
+                selectedUser->password = ui->lineEdit_password->text();
+                selectedUser->token = "";
+                if(connector.ModifyUser(selectedUser))
+                {
+                    settings.setValue(selectedUser->login + "/database_password", crypto.EncryptData(connector.GetDatabasePassword()));
+                    passwordChanged = true;
+                    this->close();
+                }
+                else ui->lineEdit_old_password->setFocus();
+            }
         }
     }
 }

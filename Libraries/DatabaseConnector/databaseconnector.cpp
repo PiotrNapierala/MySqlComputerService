@@ -22,7 +22,7 @@ under the License.
 
 #include "databaseconnector.h"
 
-bool DatabaseConnector::SetupConnection()
+bool DatabaseConnector::SetupConnection(QString databasePassword)
 {
 	QSettings settings;
 	QSqlDatabase database = QSqlDatabase::addDatabase("QMYSQL", "database");
@@ -30,7 +30,7 @@ bool DatabaseConnector::SetupConnection()
 	database.setPort(settings.value("database/database_server_port").toInt());
 	database.setDatabaseName(settings.value("database/database_name").toString());
 	database.setUserName(settings.value("database/database_user").toString());
-	database.setPassword(settings.value("database/database_password").toString());
+    database.setPassword(databasePassword);
 	if(database.open())
 	{
 		database.close();
@@ -183,6 +183,7 @@ QList<User*> DatabaseConnector::ReadUsers()
             user->password = query.value(2).toString();
             user->admin = query.value(3).toBool();
             user->active = query.value(4).toBool();
+            user->token = query.value(5).toString();
             users << user;
         }
         QSqlDatabase::database("database").close();
@@ -205,6 +206,7 @@ bool DatabaseConnector::ValidateUser(QString login, QString password)
             currentUser->password = query.value(2).toString();
             currentUser->admin = query.value(3).toBool();
             currentUser->active = query.value(4).toBool();
+            currentUser->token = query.value(5).toString();
 		}
 		QSqlDatabase::database("database").close();
 
@@ -234,12 +236,13 @@ bool DatabaseConnector::SaveUser(User *user)
 	{
         QString passHash = QByteArray(QCryptographicHash::hash(user->password.toUtf8(), QCryptographicHash::Sha256)).toHex();
 
-        QString command = "INSERT IGNORE INTO $table_name (login, password, admin, active) VALUES ('$login', '$password', '$admin', '$active');";
+        QString command = "INSERT IGNORE INTO $table_name (login, password, admin, active, token) VALUES ('$login', '$password', '$admin', '$active', '$token');";
         command.replace("$table_name", USR_tb);
 		command.replace("$login", user->login);
         command.replace("$password", passHash);
 		command.replace("$admin", QString::number(user->admin));
 		command.replace("$active", QString::number(user->active));
+        command.replace("$token", user->token);
 		QSqlQuery query(QSqlDatabase::database("database"));
 		if(query.exec(command))
 		{
@@ -287,12 +290,13 @@ bool DatabaseConnector::ModifyUser(User *user)
 	{
         QString passHash = QByteArray(QCryptographicHash::hash(user->password.toUtf8(), QCryptographicHash::Sha256)).toHex();
 
-        QString command = "UPDATE $table_name SET login = '$login', password = '$password', admin = $admin, active = $active WHERE login = '$login';";
+        QString command = "UPDATE $table_name SET login = '$login', password = '$password', admin = $admin, active = $active, token = '$token' WHERE login = '$login';";
         command.replace("$table_name", USR_tb);
         command.replace("$login", user->login);
         command.replace("$password", passHash);
 		command.replace("$admin", QString::number(user->admin));
 		command.replace("$active", QString::number(user->active));
+        command.replace("$token", user->token);
 		QSqlQuery query(QSqlDatabase::database("database"));
 		if(query.exec(command))
 		{
@@ -827,6 +831,11 @@ bool DatabaseConnector::SaveDevices(QStringList devices)
     else return false;
 
     return status;
+}
+
+QString DatabaseConnector::GetDatabasePassword()
+{
+    return QSqlDatabase::database("database").password();
 }
 
 QString DatabaseConnector::ReadStringGlobalSettings(QString name)

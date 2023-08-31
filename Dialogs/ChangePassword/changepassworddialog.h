@@ -25,8 +25,15 @@ under the License.
 
 #include <QDialog>
 #include <QCryptographicHash>
+#include <QSettings>
 
 #include "Libraries/DatabaseConnector/databaseconnector.h"
+#include "Libraries/MyCrypto/mycrypto.h"
+#include "Libraries/QRConnector/qrconnector.h"
+#include "Libraries/Totp/totp.h"
+
+#include "Dialogs/String/stringdialog.h"
+
 #include "Classes/User/user.h"
 
 namespace Ui {
@@ -49,6 +56,9 @@ private slots:
 private:
     Ui::ChangePasswordDialog *ui;
     DatabaseConnector connector;
+    QSettings settings;
+    QRConnector qrconnector;
+    TOTP mytotp;
 
     User *selectedUser;
     bool adminRights = false;

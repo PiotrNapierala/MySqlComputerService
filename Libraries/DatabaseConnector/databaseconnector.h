@@ -62,7 +62,7 @@ public:
     const QString STAT_tb = "statistic";
     const QString DEV_tb = "devices";
 
-	bool SetupConnection();
+    bool SetupConnection(QString databasePassword);
 	bool CreateTables();
 
 	bool ValidateUser(QString login, QString password);
@@ -113,6 +113,8 @@ public:
 
     QStringList ReadDevices();
     bool SaveDevices(QStringList devices);
+
+    QString GetDatabasePassword();
 
 private:
 	void SaveDatabaseLog(QString info);

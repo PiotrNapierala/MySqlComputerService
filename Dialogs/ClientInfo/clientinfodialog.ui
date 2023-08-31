@@ -291,7 +291,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -390,7 +390,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -467,7 +467,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -485,7 +485,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -624,7 +624,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -941,6 +941,13 @@ color: white;
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_name</tabstop>
+  <tabstop>lineEdit_lastname</tabstop>
+  <tabstop>lineEdit_phone</tabstop>
+  <tabstop>lineEdit_email</tabstop>
+  <tabstop>lineEdit_nip</tabstop>
+ </tabstops>
  <resources>
   <include location="../../resources.qrc"/>
  </resources>

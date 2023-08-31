@@ -130,7 +130,7 @@ bool ServiceCore::CheckVersion()
     {
         QString version = reply->readAll();
 
-        if (version.trimmed() == QCoreApplication::applicationVersion().trimmed())
+        if (version.trimmed().replace(".", "").toInt() < QCoreApplication::applicationVersion().trimmed().replace(".", "").toInt())
         {
             reply->deleteLater();
             return false;

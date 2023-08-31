@@ -340,7 +340,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -433,7 +433,7 @@ color: white;
          </font>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -557,6 +557,10 @@ color: white;
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_producer</tabstop>
+  <tabstop>lineEdit_model</tabstop>
+ </tabstops>
  <resources>
   <include location="../../resources.qrc"/>
  </resources>

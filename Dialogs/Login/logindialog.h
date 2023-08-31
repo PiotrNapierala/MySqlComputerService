@@ -24,9 +24,16 @@ under the License.
 #define LOGINDIALOG_H
 
 #include <QDialog>
+#include <QSettings>
 
 #include "Libraries/DatabaseConnector/databaseconnector.h"
 #include "Libraries/ServiceCore/servicecore.h"
+#include "Libraries/MyCrypto/mycrypto.h"
+#include "Libraries/Totp/totp.h"
+
+#include "Dialogs/FirstRun/firstrundialog.h"
+#include "Dialogs/AddUser/adduserdialog.h"
+#include "Dialogs/String/stringdialog.h"
 
 #include "Classes/User/user.h"
 
@@ -52,6 +59,10 @@ private:
 	Ui::LoginDialog *ui;
 	DatabaseConnector connector;
     ServiceCore serviceCore;
+    QSettings settings;
+    TOTP mytotp;
+
+    void CheckTempDatabasePassword();
 
 };
 

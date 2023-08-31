@@ -264,42 +264,6 @@ color: white;
       <property name="spacing">
        <number>4</number>
       </property>
-      <item row="0" column="2">
-       <widget class="QLineEdit" name="lineEdit_login">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="focusPolicy">
-         <enum>Qt::TabFocus</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_password">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Password</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="1">
        <widget class="QLabel" name="label_login">
         <property name="minimumSize">
@@ -318,8 +282,27 @@ color: white;
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="lineEdit_password">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_password_icon">
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/PNG/IMG/password.png&quot; width=&quot;30&quot; height=&quot;30&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_password">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -331,11 +314,8 @@ color: white;
           <pointsize>14</pointsize>
          </font>
         </property>
-        <property name="focusPolicy">
-         <enum>Qt::TabFocus</enum>
-        </property>
-        <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
+        <property name="text">
+         <string>Password</string>
         </property>
        </widget>
       </item>
@@ -358,22 +338,42 @@ color: white;
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_password_icon">
+      <item row="1" column="2">
+       <widget class="QLineEdit" name="lineEdit_password">
         <property name="minimumSize">
          <size>
-          <width>30</width>
+          <width>0</width>
           <height>30</height>
          </size>
         </property>
-        <property name="maximumSize">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="lineEdit_login">
+        <property name="minimumSize">
          <size>
-          <width>30</width>
+          <width>0</width>
           <height>30</height>
          </size>
         </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/PNG/IMG/password.png&quot; width=&quot;30&quot; height=&quot;30&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -413,6 +413,10 @@ color: white;
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_login</tabstop>
+  <tabstop>lineEdit_password</tabstop>
+ </tabstops>
  <resources>
   <include location="../../resources.qrc"/>
  </resources>

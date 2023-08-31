@@ -26,6 +26,7 @@ under the License.
 #include <QDialog>
 #include <QSqlDatabase>
 #include <QSettings>
+#include <QCryptographicHash>
 
 #include "Libraries/DatabaseConnector/databaseconnector.h"
 #include "Libraries/ServiceCore/servicecore.h"

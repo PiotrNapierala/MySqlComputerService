@@ -61,6 +61,8 @@ void SettingsDialog::SetupDialog()
 
 void SettingsDialog::ReadSettings()
 {
+    MyCrypto crypto(currentUser->password, QCryptographicHash::Sha256);
+
     ui->spinBox_logout_time->setValue(settings.value("logout_time").toInt());
     ui->checkBox_autoclose->setChecked(settings.value("autoclose_dialogs").toBool());
 
@@ -68,7 +70,7 @@ void SettingsDialog::ReadSettings()
     ui->lineEdit_database_server_port->setText(settings.value("database/database_server_port").toString());
     ui->lineEdit_database_name->setText(settings.value("database/database_name").toString());
     ui->lineEdit_database_user->setText(settings.value("database/database_user").toString());
-    ui->lineEdit_database_password->setText(settings.value("database/database_password").toString());
+    ui->lineEdit_database_password->setText(crypto.DecryptData(settings.value(currentUser->login + "/database_password").toString()));
     ui->lineEdit_backup_path->setText(settings.value("backup/backup_path").toString());
 
     ui->lineEdit_service_email->setText(connector.ReadStringGlobalSettings("serviceEmail"));
@@ -94,14 +96,16 @@ void SettingsDialog::ReadSettings()
 
 void SettingsDialog::SaveSettings()
 {
+    //MyCrypto crypto(currentUser->password, QCryptographicHash::Sha256);
+
     settings.setValue("logout_time", ui->spinBox_logout_time->value());
     settings.setValue("autoclose_dialogs", ui->checkBox_autoclose->isChecked());
 
-    settings.setValue("database/database_server_adress", ui->lineEdit_database_server_adress->text());
-    settings.setValue("database/database_server_port", ui->lineEdit_database_server_port->text());
-    settings.setValue("database/database_name", ui->lineEdit_database_name->text());
-    settings.setValue("database/database_user", ui->lineEdit_database_user->text());
-    settings.setValue("database/database_password", ui->lineEdit_database_password->text());
+    //settings.setValue("database/database_server_adress", ui->lineEdit_database_server_adress->text());
+    //settings.setValue("database/database_server_port", ui->lineEdit_database_server_port->text());
+    //settings.setValue("database/database_name", ui->lineEdit_database_name->text());
+    //settings.setValue("database/database_user", ui->lineEdit_database_user->text());
+    //settings.setValue(currentUser->login + "/database_password", crypto.EncryptData(ui->lineEdit_database_password->text()));
     settings.setValue("backup/backup_path", ui->lineEdit_backup_path->text());
 
     connector.SaveStringGlobalSettings("serviceEmail", ui->lineEdit_service_email->text());

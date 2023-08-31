@@ -28,6 +28,7 @@ AddUserDialog::AddUserDialog(QWidget *parent, bool forceAdmin) :
     ui(new Ui::AddUserDialog)
 {
     ui->setupUi(this);
+    ui->lineEdit_login->setFocus();
     ui->lineEdit_login->setValidator(serviceCore.GetUserValidator(ui->lineEdit_login));
     if(forceAdmin)
     {
@@ -52,6 +53,51 @@ void AddUserDialog::on_pushButton_save_clicked()
         user->admin = ui->checkBox_admin->isChecked();
         user->login = ui->lineEdit_login->text();
         user->password = ui->lineEdit_password->text();
-        if(connector.SaveUser(user)) this->close();
+
+        MyCrypto crypto(crypto.HashString(user->password, QCryptographicHash::Sha256), QCryptographicHash::Sha256);
+        if(ui->checkBox_two_factor->isChecked())
+        {
+            user->token = mytotp.GenerateRandomBase32Token(60);
+
+            QString QRdata = "otpauth://totp/MySqlComputerService-" + user->login + "?secret=" + user->token;
+            QPixmap QR = qrconnector.GenerateQR(QRdata);
+            QLabel *QRLabel = new QLabel(this);
+            QRLabel->setPixmap(QR.scaled(200, 200));
+
+            QDialog QRdialog;
+            QHBoxLayout *layout = new QHBoxLayout(&QRdialog);
+            layout->setAlignment(Qt::AlignCenter);
+            layout->addWidget(QRLabel);
+
+            QRdialog.setLayout(layout);
+            QRdialog.setWindowTitle("QR code");
+            QRdialog.setFixedSize(QSize(240, 240));
+            QRdialog.setWindowIcon(QPixmap(":/PNG/IMG/qr.png"));
+
+            QRdialog.exec();
+
+            StringDialog dialog(tr("Enter 2FA code"), QLineEdit::Password);
+            dialog.exec();
+            if(dialog.accepted && mytotp.GetTOTPFromToken(user->token) == dialog.text)
+            {
+                if(connector.SaveUser(user))
+                {
+                    QString decryptedDatabasePassword = connector.GetDatabasePassword();
+                    QString encryptedDatabasePassword = crypto.EncryptData(decryptedDatabasePassword);
+                    settings.setValue(user->login + "/database_password", encryptedDatabasePassword);
+                    this->close();
+                }
+            }
+        }
+        else
+        {
+            if(connector.SaveUser(user))
+            {
+                QString decryptedDatabasePassword = connector.GetDatabasePassword();
+                QString encryptedDatabasePassword = crypto.EncryptData(decryptedDatabasePassword);
+                settings.setValue(user->login + "/database_password", encryptedDatabasePassword);
+                this->close();
+            }
+        }
     }
 }

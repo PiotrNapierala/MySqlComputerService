@@ -62,7 +62,8 @@ void FirstRunDialog::SaveDatabaseConfig()
 	settings.setValue("database/database_server_port", ui->lineEdit_database_server_port->text().toInt());
 	settings.setValue("database/database_name", ui->lineEdit_database_name->text());
 	settings.setValue("database/database_user", ui->lineEdit_database_user->text());
-	settings.setValue("database/database_password", ui->lineEdit_database_password->text());
+    settings.setValue("database/temp_database_password", ui->lineEdit_database_password->text());
+    settings.setValue("database/database_password_hash", QString(QCryptographicHash::hash(ui->lineEdit_database_password->text().toUtf8(), QCryptographicHash::Sha256).toHex()));
 }
 
 void FirstRunDialog::on_pushButton_clicked()

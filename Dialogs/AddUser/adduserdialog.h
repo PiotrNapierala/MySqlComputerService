@@ -24,9 +24,16 @@ under the License.
 #define ADDUSERDIALOG_H
 
 #include <QDialog>
+#include <QSettings>
+#include <QCryptographicHash>
 
 #include "Libraries/DatabaseConnector/databaseconnector.h"
 #include "Libraries/ServiceCore/servicecore.h"
+#include "Libraries/MyCrypto/mycrypto.h"
+#include "Libraries/Totp/totp.h"
+#include "Libraries/QRConnector/qrconnector.h"
+
+#include "Dialogs/String/stringdialog.h"
 
 #include "Classes/User/user.h"
 
@@ -51,6 +58,9 @@ private:
     Ui::AddUserDialog *ui;
     DatabaseConnector connector;
     ServiceCore serviceCore;
+    QSettings settings;
+    QRConnector qrconnector;
+    TOTP mytotp;
 
 };
 
