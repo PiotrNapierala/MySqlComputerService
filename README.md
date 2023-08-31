@@ -3,3 +3,6 @@ MySqlComputerService is a complete application for managing your own service. It
 
 ## Installation
 Install the application from the exe installer. Upon the first run, you will be prompted to provide MySQL database access details. No need to create tables, the application will create them automatically. Ensure the database user has full privileges for database management.
+
+## External libraries
+The application utilizes several external libraries for sending email messages to clients and generating QR codes. The libraries are:
