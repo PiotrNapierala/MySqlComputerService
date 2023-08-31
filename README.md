@@ -12,3 +12,7 @@ The application utilizes several external libraries for sending email messages t
 The program written in C++ and [QT](https://www.qt.io/) is licensed under GPLv3, allowing modification and distribution while retaining copyright.</br>
 copyright Piotr Napierała 2023
 
+## Photos
+![image](https://github.com/PiotrNapierala/MySqlComputerService/assets/72657389/2581afa3-903e-466d-8c5e-3807de3bb718)
+
+
