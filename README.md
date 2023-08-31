@@ -9,5 +9,6 @@ The application utilizes several external libraries for sending email messages t
 [nayuki QR-Code-generator](https://github.com/nayuki/QR-Code-generator/tree/master), [nayuki Time-based One-Time Password tools](https://www.nayuki.io/page/time-based-one-time-password-tools) and [bluetiger9 SmtpClient-for-Qt](https://github.com/bluetiger9/SmtpClient-for-Qt). SmtpClient-for-Qt needs to be precompiled using your version of Qt.
 
 ## License
-The program written in C++ and [QT](https://www.qt.io/) is licensed under GPLv3, allowing modification and distribution while retaining copyright.
+The program written in C++ and [QT](https://www.qt.io/) is licensed under GPLv3, allowing modification and distribution while retaining copyright.</br>
+copyright Piotr Napierała 2023
 
