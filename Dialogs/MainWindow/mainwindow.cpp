@@ -50,6 +50,14 @@ void MainWindow::SetupWindow()
     timeTimer->start(1000);
 
     ui->pushButton_update->setVisible(serviceCore.CheckVersion());
+
+    PrepareServer();
+}
+
+void MainWindow::newHttpID(const QString& id)
+{
+    IDlist.clear();
+    IDlist << id;
 }
 
 void MainWindow::UpdateTime()
@@ -57,6 +65,14 @@ void MainWindow::UpdateTime()
 	QString currentDate = QDate::currentDate().toString("dd.MM.yyyy");
 	QString currentTime = QTime::currentTime().toString("hh:mm");
 	ui->label_clock->setText(currentDate + " " + currentTime);
+
+    if(!IDlist.isEmpty() && settings.value("url_search").toBool())
+    {
+        SearchDialog dialog(currentUser, IDlist.first(), this);
+        dialog.exec();
+    }
+    IDlist.clear();
+
     CheckLoginTime();
 }
 
@@ -299,6 +315,7 @@ void MainWindow::on_pushButton_settings_clicked()
 {
     SettingsDialog dialog(this, currentUser);
     dialog.exec();
+    PrepareServer();
 }
 
 void MainWindow::CheckLoginTime()
@@ -317,6 +334,18 @@ void MainWindow::CheckLoginTime()
     {
         qApp->quit();
         QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
+    }
+}
+
+void MainWindow::PrepareServer()
+{
+    if(settings.value("url_search").toBool())
+    {
+        int port = 8080;
+        if(settings.value("url_search_port").toInt() != 0) port = settings.value("url_search_port").toInt();
+        HttpServerGet *serverGet = new HttpServerGet(port);
+        connect(serverGet, &HttpServerGet::idReceived, this, &MainWindow::newHttpID);
+        serverGet->listen();
     }
 }
 

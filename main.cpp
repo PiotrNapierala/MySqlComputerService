@@ -37,9 +37,10 @@ under the License.
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
+    a.setStyle("fusion");
 	QCoreApplication::setOrganizationName("Piotr Napierala");
     QCoreApplication::setApplicationName("MySqlComputerService");
-    QCoreApplication::setApplicationVersion("1.3.0");
+    QCoreApplication::setApplicationVersion("1.3.2");
 
     QSettings settings;
     QTranslator translator;

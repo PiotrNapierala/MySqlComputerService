@@ -50,7 +50,7 @@ void ChangePasswordDialog::on_pushButton_save_clicked()
         {
             if(ui->checkBox_two_factor->isChecked())
             {
-                selectedUser->token = mytotp.GenerateRandomBase32Token(60);
+                selectedUser->token = mytotp.GenerateRandomBase32Token(20);
 
                 QString QRdata = "otpauth://totp/MySqlComputerService-" + selectedUser->login + "?secret=" + selectedUser->token;
                 QPixmap QR = qrconnector.GenerateQR(QRdata);

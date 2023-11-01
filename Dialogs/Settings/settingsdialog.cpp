@@ -88,6 +88,9 @@ void SettingsDialog::ReadSettings()
     ui->lineEdit_apache_server_adress->setText(connector.ReadStringGlobalSettings("apacheServerAdress"));
     ui->lineEdit_pin->setText(QString::number(connector.ReadIntGlobalSettings("pin")));
 
+    ui->checkBox_url_search->setChecked(settings.value("url_search").toBool());
+    ui->spinBox_url_search_port->setValue(settings.value("url_search_port").toInt());
+
     IPList = connector.ReadDevices();
     ui->listWidget_ip_list->addItems(IPList);
 
@@ -122,6 +125,9 @@ void SettingsDialog::SaveSettings()
     connector.SaveIntGlobalSettings("enableExtensions", ui->checkBox_enable_extensions->isChecked());
     connector.SaveStringGlobalSettings("apacheServerAdress", ui->lineEdit_apache_server_adress->text());
     connector.SaveIntGlobalSettings("pin", ui->lineEdit_pin->text().toInt());
+
+    settings.setValue("url_search", ui->checkBox_url_search->isChecked());
+    settings.setValue("url_search_port", ui->spinBox_url_search_port->value());
 
     connector.SaveDevices(IPList);
 

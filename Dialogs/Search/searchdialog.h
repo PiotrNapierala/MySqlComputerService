@@ -47,7 +47,7 @@ class SearchDialog : public QDialog
 	Q_OBJECT
 
 public:
-    explicit SearchDialog(User *user, QWidget *parent = nullptr);
+    explicit SearchDialog(User *user, QString searchID = "", QWidget *parent = nullptr);
 	~SearchDialog();
 
 private slots:
@@ -64,7 +64,7 @@ private:
 	ServiceCore serviceCore;
     User *currentUser;
 
-	void SearchOrders();
+    void SearchOrders(QString id);
 	void SearchClients();
 	void SearchComputers();
 

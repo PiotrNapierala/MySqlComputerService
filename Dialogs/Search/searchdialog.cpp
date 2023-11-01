@@ -23,13 +23,15 @@ under the License.
 #include "searchdialog.h"
 #include "ui_searchdialog.h"
 
-SearchDialog::SearchDialog(User *user, QWidget *parent) :
+SearchDialog::SearchDialog(User *user, QString searchID, QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::SearchDialog)
 {
 	ui->setupUi(this);
     ui->lineEdit_search->setFocus();
     currentUser = user;
+
+    if(!searchID.isEmpty()) SearchOrders(searchID);
 }
 
 SearchDialog::~SearchDialog()
@@ -54,10 +56,11 @@ void SearchDialog::SearchClients()
 	}
 }
 
-void SearchDialog::SearchOrders()
+void SearchDialog::SearchOrders(QString id)
 {
 	ordersFound.clear();
 	QString search = ui->lineEdit_search->text();
+    if(!id.isEmpty()) search = id;
 	QString searchCommand = "order_number LIKE '%" + search + "%' OR date_of_admission LIKE '%" + search + "%' OR release_date LIKE '%" + search + "%' OR serial_number LIKE '%" + search + "%' OR seals LIKE '%" + search + "%'";
 	if(ui->checkBox_diagnosis_orders->isChecked()) ordersFound << connector.ReadOrdersWhere(connector.CDO_tb, searchCommand);
 	if(ui->checkBox_repair_orders->isChecked()) ordersFound << connector.ReadOrdersWhere(connector.CRO_tb, searchCommand);
@@ -118,14 +121,14 @@ void SearchDialog::SearchComputers()
 void SearchDialog::on_pushButton_search_clicked()
 {
 	if(ui->radioButton_clients->isChecked()) SearchClients();
-	else if(ui->radioButton_orders->isChecked()) SearchOrders();
+    else if(ui->radioButton_orders->isChecked()) SearchOrders("");
 	else if(ui->radioButton_computers->isChecked()) SearchComputers();
 }
 
 void SearchDialog::on_lineEdit_search_editingFinished()
 {
 	if(ui->radioButton_clients->isChecked()) SearchClients();
-	else if(ui->radioButton_orders->isChecked()) SearchOrders();
+    else if(ui->radioButton_orders->isChecked()) SearchOrders("");
 	else if(ui->radioButton_computers->isChecked()) SearchComputers();
 }
 
@@ -176,7 +179,7 @@ void SearchDialog::on_listWidget_results_itemDoubleClicked(QListWidgetItem *item
 	}
 
 	if(ui->radioButton_clients->isChecked()) SearchClients();
-	else if(ui->radioButton_orders->isChecked()) SearchOrders();
+    else if(ui->radioButton_orders->isChecked()) SearchOrders("");
 	else if(ui->radioButton_computers->isChecked()) SearchComputers();
 }
 

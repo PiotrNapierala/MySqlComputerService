@@ -41,6 +41,7 @@ SOURCES += \
     Libraries/ApplicationLog/applicationlog.cpp \
     Libraries/DatabaseConnector/databaseconnector.cpp \
     Libraries/EmailConnector/emailconnector.cpp \
+    Libraries/GetUrlValue/httpserverget.cpp \
     Libraries/ImageDownloader/imagedownloader.cpp \
     Libraries/MyCrypto/mycrypto.cpp \
     Libraries/QRConnector/qrconnector.cpp \
@@ -89,6 +90,7 @@ HEADERS += \
     Libraries/ApplicationLog/applicationlog.h \
     Libraries/DatabaseConnector/databaseconnector.h \
     Libraries/EmailConnector/emailconnector.h \
+    Libraries/GetUrlValue/httpserverget.h \
     Libraries/ImageDownloader/imagedownloader.h \
     Libraries/MyCrypto/mycrypto.h \
     Libraries/QRConnector/qrconnector.h \

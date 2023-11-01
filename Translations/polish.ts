@@ -949,26 +949,26 @@
         <translation>Dodaj</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="168"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="212"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="257"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="184"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="228"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="273"/>
         <source>Are you sure you want to move the order to cancelled?</source>
         <translation>Przenieść zlecenie do anulowanych?</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="178"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="222"/>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="267"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="194"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="238"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="283"/>
         <source>Are you sure you want to delete the order?</source>
         <translation>Usunąć zlecenie?</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="336"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="365"/>
         <source>A new version is available. Download and install?</source>
         <translation>Dostępna jest nowa wersja. Pobrać i zainstalować?</translation>
     </message>
     <message>
-        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="347"/>
+        <location filename="Dialogs/MainWindow/mainwindow.cpp" line="376"/>
         <source>Error downloading updates</source>
         <translation>Błąd podczas pobierania aktualizacji</translation>
     </message>
@@ -1366,204 +1366,209 @@
         <translation>Ogólne</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="325"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="351"/>
         <source>English</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="334"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="360"/>
         <source>Polski</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="368"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="396"/>
         <source>minutes of inactivity</source>
         <translation>minutach bezczynności</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="410"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="438"/>
         <source>Log out after</source>
         <translation>Wyloguj po</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="427"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="382"/>
         <source>Close windows after adding an object</source>
         <translation>Zamykaj okna po dodaniu obiektu</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="455"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="532"/>
         <source>User</source>
         <translation>Użytkownik</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="491"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="568"/>
         <source>-</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="560"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="637"/>
         <source>Change password</source>
         <translation>Zmień hasło</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="523"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="600"/>
         <source>Users</source>
         <translation>Użytkownicy</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="587"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="502"/>
+        <source>Url search port</source>
+        <translation>Adres url automatycznego wyszukiwania</translation>
+    </message>
+    <message>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="664"/>
         <source>Database</source>
         <translation>Baza danych</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="652"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="729"/>
         <source>Location</source>
         <translation>Lokalizacja</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="757"/>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="934"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="834"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1011"/>
         <source>Backup</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="787"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="864"/>
         <source>Database server port</source>
         <translation>Port serwera bazy danych</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="805"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="882"/>
         <source>Database user</source>
         <translation>Użytkownik bazy danych</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="823"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="900"/>
         <source>Database name</source>
         <translation>Nazwa bazy danych</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="883"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="960"/>
         <source>Database server address</source>
         <translation>Adres serwera bazy danych</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="901"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="978"/>
         <source>Database user password</source>
         <translation>Hasło użytkownika bazy</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="952"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1029"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1026"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1103"/>
         <source>Server port</source>
         <translation>Port serwera poczty</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1044"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1121"/>
         <source>Service email</source>
         <translation>Email serwisu</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1059"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1136"/>
         <source>Enable email notifications</source>
         <translation>Włącz powiadomienia email</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1077"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1154"/>
         <source>Mail server (SMTP)</source>
         <translation>Serwer poczty (SMTP)</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1144"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1221"/>
         <source>Password</source>
         <translation>Hasło</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1159"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1236"/>
         <source>Global settings</source>
         <translation>Ustawienia globalne</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1197"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1274"/>
         <source>Service owner</source>
         <translation>Właścicel serwisu</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1233"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1310"/>
         <source>Service address</source>
         <translation>Adres serwisu</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1251"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1328"/>
         <source>Website</source>
         <translation>Strona internetowa</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1305"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1382"/>
         <source>Name of the service</source>
         <translation>Nazwa serwisu</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1347"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1424"/>
         <source>Extensions</source>
         <translation>Rozszerzenia</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1400"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1477"/>
         <source>Security pin</source>
         <translation>Pin zabezpieczający</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1460"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1537"/>
         <source>Generate extensions</source>
         <translation>Wygeneruj rozszerzenia</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1495"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1572"/>
         <source>Enable extensions</source>
         <translation>Włącz rozszerzenia</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1507"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1584"/>
         <source>Trusted IP addresses</source>
         <translation>Zaufane adresy IP</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1528"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1605"/>
         <source>Apache server IP address</source>
         <translation>Adres IP serwera Apache</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.ui" line="1610"/>
+        <location filename="Dialogs/Settings/settingsdialog.ui" line="1687"/>
         <source>Save</source>
         <translation>Zapisz</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.cpp" line="157"/>
+        <location filename="Dialogs/Settings/settingsdialog.cpp" line="163"/>
         <source>Settings saved</source>
         <translation>Zapisano ustawienia</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.cpp" line="172"/>
+        <location filename="Dialogs/Settings/settingsdialog.cpp" line="178"/>
         <source>The extensions folder has been created on the desktop, change the access details in the php files and put the whole folder on the server</source>
         <translation>Folder z rozszerzeniami został utworzony na pulpicie. Zmień dane dostępowe w plikach php i umieść folder w katalogu html serwera Apache</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.cpp" line="178"/>
+        <location filename="Dialogs/Settings/settingsdialog.cpp" line="184"/>
         <source>Choose your destination</source>
         <translation>Wybierz miejsce docelowe</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.cpp" line="193"/>
+        <location filename="Dialogs/Settings/settingsdialog.cpp" line="199"/>
         <source>Backup completed successfully</source>
         <translation>Backup ukończony pomyślnie</translation>
     </message>
     <message>
-        <location filename="Dialogs/Settings/settingsdialog.cpp" line="198"/>
         <location filename="Dialogs/Settings/settingsdialog.cpp" line="204"/>
+        <location filename="Dialogs/Settings/settingsdialog.cpp" line="210"/>
         <source>Error creating backup</source>
         <translation>Błąd podczas tworzenia backupu</translation>
     </message>

@@ -37,6 +37,7 @@ under the License.
 #include "Libraries/ServiceCore/servicecore.h"
 #include "Libraries/EmailConnector/emailconnector.h"
 #include "Libraries/StatisticConnector/statisticconnector.h"
+#include "Libraries/GetUrlValue/httpserverget.h"
 
 #include "Classes/Client/client.h"
 #include "Classes/Order/order.h"
@@ -84,6 +85,9 @@ private slots:
     void on_pushButton_refresh_clicked();
     void on_pushButton_update_clicked();
 
+public slots:
+    void newHttpID(const QString &id);
+
 private:
 	Ui::MainWindow *ui;
 	DatabaseConnector connector;
@@ -96,11 +100,13 @@ private:
     QPoint mousePosition;
 
 	QList<Order*> currentDiagnosisOrders, currentRepairOrders, currentCompletedOrders;
+    QStringList IDlist;
 
 	void SetupWindow();
 	void RefreshOrders();
 	QListWidgetItem *PrepareOrderDisplay(Order* order);
     void CheckLoginTime();
+    void PrepareServer();
 
 };
 #endif // MAINWINDOW_H
