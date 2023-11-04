@@ -13,6 +13,6 @@ The program written in C++ and [QT](https://www.qt.io/) is licensed under GPLv3,
 copyright Piotr Napierała 2023
 
 ## Photos
-![image](https://github.com/PiotrNapierala/MySqlComputerService/assets/72657389/2581afa3-903e-466d-8c5e-3807de3bb718)
+![image](https://github.com/PiotrNapierala/MySqlComputerService/assets/72657389/5db1e6b0-0963-4094-8192-5b1c2f695a61)
 
 
